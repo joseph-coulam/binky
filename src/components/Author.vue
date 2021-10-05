@@ -5,6 +5,10 @@
 			{{ $static.metadata.siteName }}
 		</h1>
 
+		<div class="buttons__wrapper">
+			<Button button-text="Support Us" button-type="primary" />
+			<Button button-text="Updates" button-type="secondary" />
+		</div>
 		<p class="author__intro">
 			A simple, hackable & minimalistic starter for Gridsome that uses Netlify CMS for content.
 		</p>
@@ -26,12 +30,25 @@ query {
 </static-query>
 
 <script>
+import Button from '~/components/Button'
+
 export default {
+	components: {
+    Button
+  },
 	props: ['showTitle']
 }
 </script>
 
 <style lang="scss">
+
+.buttons__wrapper{
+	margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
 .author {
 	margin: 0 auto;
 	max-width: 500px;

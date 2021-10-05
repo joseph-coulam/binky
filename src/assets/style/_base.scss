@@ -1,18 +1,19 @@
 // Default
 * {
 	box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  	font-smooth: never;
+	-webkit-font-smoothing : none;
+
 }
 
 body {
  	background-color: var(--bg-color);
  	color: var(--body-color);
  	transition: color .6s, background-color .6s;
- 	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
+	font-family: lores-12, monospace;
+	margin:0;
+	padding:0;
+	line-height: 1.5;
 }
 
 a:not(.button) {
@@ -23,6 +24,16 @@ a:not(.button) {
 	}
 }
 
-img {
+img{
 	max-width: 100%;
+}
+
+img, .aliased {
+	image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
 }
