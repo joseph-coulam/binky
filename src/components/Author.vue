@@ -5,13 +5,14 @@
 			{{ $static.metadata.siteName }}
 		</h1>
 
+		<p class="author__intro">
+			In Pixel Perfect you take on the role of a God overlooking the universe of Pixia. As you expand a civilization through different ages you’ll meet challenges along the way; from building up an empire to fighting off hordes of enemies - how long do you think you can succeed as a God?
+		</p>
+
 		<div class="buttons__wrapper">
 			<Button button-text="Support Us" button-type="primary" />
 			<Button button-text="Updates" button-type="secondary" />
 		</div>
-		<p class="author__intro">
-			A simple, hackable & minimalistic starter for Gridsome that uses Netlify CMS for content.
-		</p>
 
 		<p class="author__links">
 			<a href="//twitter.com/suits_at">Follow on Twitter</a>

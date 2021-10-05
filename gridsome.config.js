@@ -4,15 +4,24 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const tailwind = require('tailwindcss')
+const purgecss = require('@fullhuman/postcss-purgecss')
+
+const postcssPlugins = [
+  tailwind(),
+]
+
+if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))
+
 module.exports = {
-  siteName: 'Netlify CMS Gridsome starter template',
-  siteDescription: 'A simple, hackable & minimalistic starter for Gridsome that uses Netlify CMS for content.',
+  siteName: 'Binky Games',
+  siteDescription: 'We make games.',
 
   templates: {
     Post: '/:title',
     Tag: '/tag/:id'
   },
-
+  
   plugins: [
     {
       // Create posts from markdown files
@@ -30,6 +39,14 @@ module.exports = {
       }
     }
   ],
+
+  css: {
+    loaderOptions: {
+        postcss: {
+            plugins: postcssPlugins,
+        },
+    },
+  },
 
   transformers: {
     //Add markdown support to all file-system sources

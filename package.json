@@ -14,7 +14,11 @@
     "gridsome": "^0.7.23"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "autoprefixer": "^9.8.8",
     "node-sass": "^5.0.0",
-    "sass-loader": "^10.0.3"
+    "postcss": "^7.0.39",
+    "sass-loader": "^10.1.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.16"
   }
 }

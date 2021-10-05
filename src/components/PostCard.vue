@@ -1,17 +1,27 @@
 <template>
-  <div class="post-card content-box" :class="{'post-card--has-poster' : post.poster}">
-    <div class="post-card__header">
-      <g-image alt="Cover image" v-if="post.cover_image" class="post-card__image" :src="post.cover_image" />
-    </div>
-    <div class="post-card__content">
-      <h2 class="post-card__title" v-html="post.title" />
-      <p class="post-card__description" v-html="post.description" />
+  <div class="post-card relative">
+    <div class="post-card__content flex flex-col h-full justify-between flex-grow bg-white text-black">
 
-      <PostMeta class="post-card__meta" :post="post" />
-      <PostTags class="post-card__tags" :post="post" />
-
+      <!-- Link -->
       <g-link class="post-card__link" :to="post.path">Link</g-link>
+
+      <div class="post-card__header">
+        <g-image alt="Cover image" v-if="post.cover_image" class="post-card__image" :src="post.cover_image" />
+      </div>
+
+      <div class="p-4 pb-0">
+        <PostTags class="post-card__tags mb-4" :post="post" />
+        <h2 class="post-card__title text-lg font-bold" v-html="post.title" />
+        <p class="post-card__description text-gray-500 text-base overflow-hidden" v-html="post.description" />
+        
+      </div>
+
+      <div class="p-4">
+        <PostMeta class="post-card__meta bg-white text-black" :post="post" />
+      </div>
+      
     </div>
+
   </div>
 </template>
 
@@ -29,39 +39,29 @@ export default {
 </script>
 
 <style lang="scss">
+
+
 .post-card {
-  margin-bottom: var(--space);
-  position: relative;
+
+  @apply text-xl rounded-xl text-white;
+  border: 6px solid;
+  border-image: url('../assets/images/ui-outline.png') 6;
+  background-color: white;
 
   &__header {
-    margin-left: calc(var(--space) * -1);
-    margin-right: calc(var(--space) * -1);
-    margin-bottom: calc(var(--space) / 2);
-    margin-top: calc(var(--space) * -1);
-    overflow: hidden;
-    border-radius: var(--radius) var(--radius) 0 0;
+    @apply overflow-hidden;
+    border-bottom: 6px solid;
+    border-image: url('../assets/images/ui-outline.png') 6;
 
     &:empty {
-      display: none;
+      @apply hidden;
     }
   }
 
-  &__image {
-    min-width: 100%;
-  }
-
-  &__title {
-    margin-top: 0;
-  }
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 1px 10px 30px 0 rgba(0,0,0,.1);
-  }
-
-  &__tags {
-    z-index: 1;
-    position: relative;
+  &__description{
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
   }
 
   &__link {
@@ -74,6 +74,8 @@ export default {
     overflow: hidden;
     text-indent: -9999px;
     z-index: 0;
+  }
+  &__content{
   }
 }
 </style>

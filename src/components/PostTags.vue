@@ -1,7 +1,7 @@
 <template>
-   <div class="post-tags">
-   		<g-link class="post-tags__link" v-for="tag in post.tags" :key="tag.id" :to="tag.path">
-   			<span>#</span> {{ tag.title }}
+   <div class="inline-flex post-tags">
+   		<g-link class="inline-block text-base post-tags__tag ext-base" v-for="tag in post.tags" :key="tag.id" :to="tag.path">
+   			{{ tag.title }}
    		</g-link>
     </div>
 </template>
@@ -13,18 +13,16 @@ export default {
 </script>
 
 <style lang="scss">
-.post-tags {
-  margin: 1em 0 0;
+	.post-tags {
+        &__tag {
+			@apply rounded-xl text-gray-300 px-2;
+            border: 6px solid;
+            border-image: url('../assets/images/ui-outline.png') 6;
+            background-color: #010101;
 
-  &__link {
-  	margin-right: .7em;
-  	font-size: .8em;
-  	color: currentColor;
-  	text-decoration: none;
-  	background-color: var(--bg-color);
-  	color: currentColor!important; //Todo: remove important;
-  	padding: .5em;
-  	border-radius: var(--radius);
-  }
-}
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+        }
+	}
 </style>

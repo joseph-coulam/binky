@@ -1,6 +1,6 @@
 <template>
-    <div :class="['button', 'button__'+buttonType]">
-        {{ buttonText }}
+    <div>
+        <div :class="['button', 'button__'+buttonType]">{{ buttonText }}</div>
     </div>
 </template>
 
@@ -12,18 +12,13 @@
 
 <style lang="scss">
     .button{
-        display: inline-block;
-        padding: .8rem 2rem 1rem;
-        min-width: 200px;
-        line-height: 0;
-        text-transform: capitalize;
+        @apply flex items-center justify-center text-xl rounded-xl text-white py-2 px-8;
         
         &__primary {
+            @apply text-black;
             border: 10px solid;
             border-image: url('../assets/images/ui-button-primary.png') 10;
             background-color: #f9c054;
-            color: black;
-            border-radius: 10px;
         }
         &__secondary {
             border: 10px solid;
@@ -31,10 +26,12 @@
             background-color: #102133;
         }
         &__kickstarter{
+            @apply text-black font-bold py-1 px-6 text-xl;
             border: 10px solid;
-            border-image: url('../assets/images/ui-button-secondary.png') 10;
-            background-color: #102133;
+            border-image: url('../assets/images/ui-button-ks.png') 10;
+            background-color: #05ce78;
         }
+
         &__alert{
 
         }
