@@ -4,15 +4,6 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const tailwind = require('tailwindcss')
-const purgecss = require('@fullhuman/postcss-purgecss')
-
-const postcssPlugins = [
-  tailwind(),
-]
-
-if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))
-
 module.exports = {
   siteName: 'Binky Games',
   siteDescription: 'We make games.',
@@ -24,6 +15,7 @@ module.exports = {
   
   plugins: [
     {
+      use: "gridsome-plugin-tailwindcss",
       // Create posts from markdown files
       use: '@gridsome/source-filesystem',
       options: {
@@ -39,14 +31,6 @@ module.exports = {
       }
     }
   ],
-
-  css: {
-    loaderOptions: {
-        postcss: {
-            plugins: postcssPlugins,
-        },
-    },
-  },
 
   transformers: {
     //Add markdown support to all file-system sources
