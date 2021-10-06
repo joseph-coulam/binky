@@ -11,11 +11,13 @@
     "@gridsome/remark-prismjs": "^0.5.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.4",
+    "autoprefixer": "^9",
     "gridsome": "^0.7.23",
     "gridsome-plugin-tailwindcss": "^4.1.1",
+    "postcss": "^7",
     "postcss-import": "^14.0.2",
     "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^2.2.16"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "devDependencies": {
     "node-sass": "^5.0.0",
