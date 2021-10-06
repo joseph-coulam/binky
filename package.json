@@ -11,14 +11,14 @@
     "@gridsome/remark-prismjs": "^0.5.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.4",
-    "gridsome": "^0.7.23"
+    "autoprefixer": "^9",
+    "gridsome": "^0.7.23",
+    "postcss": "^7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.3",
-    "autoprefixer": "^9.8.8",
     "node-sass": "^5.0.0",
-    "postcss": "^7.0.39",
-    "sass-loader": "^10.1.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.16"
+    "sass-loader": "^10.1.1"
   }
 }
