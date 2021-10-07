@@ -2,8 +2,8 @@
   "name": "netlifycms-gridsome",
   "private": true,
   "scripts": {
-    "build": "NODE_ENV=production gridsome build",
-    "dev": "NODE_ENV=development gridsome develop",
+    "build": "gridsome build",
+    "dev": "gridsome develop",
     "explore": "gridsome explore"
   },
   "dependencies": {

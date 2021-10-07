@@ -1,37 +1,44 @@
 <template>
   <div id="app">
-
     <Toast />
 
-    <header class="header fixed w-full z-50 top-4 px-4 flex justify-evenly items-start">
-      <ToggleTheme class="flex flex-1 justify-start" />
+    <header
+      class="header fixed w-full z-50 top-4 px-4 flex justify-evenly items-start"
+    >
+      <Accessibility class="flex flex-1 justify-start" />
       <Navigation class="flex flex-1 justify-center" />
-			<Button class="flex flex-1 justify-end" button-text="Kickstarter" button-type="kickstarter" />
+      <Button
+        class="flex flex-1 justify-end"
+        button-text="Kickstarter"
+        button-type="kickstarter"
+      />
     </header>
 
     <main class="main">
-      <slot/>
+      <slot />
     </main>
 
     <footer class="footer">
-      <span class="footer__copyright">Copyright © {{ new Date().getFullYear() }}. </span>
-      <span class="footer__links">Powered by <a href="//www.suits.at"> SUITS </a></span>
+      <span class="footer__copyright"
+        >Copyright © {{ new Date().getFullYear() }}.
+      </span>
+      <span class="footer__links"
+        >Powered by <a href="//www.suits.at"> SUITS </a></span
+      >
     </footer>
-
   </div>
 </template>
 
 <script>
-import ToggleTheme from '~/components/ToggleTheme.vue'
+import Accessibility from '~/components/Accessibility.vue'
 import Navigation from '~/components/Navigation.vue'
 import Button from '~/components/Button.vue'
 import Toast from '~/components/Toast.vue'
 
 export default {
-  props: {
-  },
+  props: {},
   components: {
-    ToggleTheme,
+    Accessibility,
     Navigation,
     Button,
     Toast
@@ -39,5 +46,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>
