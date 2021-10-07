@@ -1,3 +1,107 @@
 <template>
-  <div class="text-2xl">test</div>
+  <Layout :show-logo="false">
+    <!-- Author intro -->
+    <Splash />
+
+  <div class="bg-red-500 py-10">
+
+      <div class="w-100 max-w-4xl mx-auto">
+        <Heading heading="Example"/>
+        <p class="text-2xl text-center leading-relaxed text-white">
+          In Pixel Perfect you take on the role of a God overlooking the universe of Pixia. As you expand a civilization through different ages you’ll meet challenges along the way; from building up an empire to fighting off hordes of enemies - how long do you think you can succeed as a God?
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto">
+        <Slider />
+      </div>
+
+      <!-- Gameplay Section -->
+      <div class="max-w-6xl mx-auto">
+        <GameplaySection header="Test" icon="assets/images/icon-map.png" image="https://via.placeholder.com/150">
+            In Pixel Perfect you take on the role of a God overlooking the universe of Pixia. As you expand a civilization through different ages you’ll meet challenges along the way; from building up an empire to fighting off hordes of enemies - how long do you think you can succeed as a God?
+        </GameplaySection>
+
+        <GameplaySection header="Test" icon="assets/images/icon-map.png" image="https://via.placeholder.com/150" direction="reverse">
+            In Pixel Perfect you take on the role of a God overlooking the universe of Pixia. As you expand a civilization through different ages you’ll meet challenges along the way; from building up an empire to fighting off hordes of enemies - how long do you think you can succeed as a God?
+        </GameplaySection>
+
+        <GameplaySection header="Test" icon="../../assets/images/icon-map.png" image="https://via.placeholder.com/150">
+            In Pixel Perfect you take on the role of a God overlooking the universe of Pixia. As you expand a civilization through different ages you’ll meet challenges along the way; from building up an empire to fighting off hordes of enemies - how long do you think you can succeed as a God?
+        </GameplaySection>
+
+      </div>
+    <!-- List posts -->
+    <div class="relative bg-gray-900">
+
+      <div class="w-100 max-w-6xl mx-auto grid grid-cols-3 gap-6 py-16">
+        <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
+      </div>
+    
+    </div>
+  </div>
+
+  </Layout>
 </template>
+
+<page-query>
+query {
+  posts: allPost(filter: { published: { eq: true }}) {
+    edges {
+      node {
+        id
+        title
+        date (format: "D. MMMM YYYY")
+        timeToRead
+        description
+        cover_image (width: 770, height: 380, blur: 10)
+        ...on Post {
+        id
+        title
+        path
+        }
+        path
+        tags {
+          id
+          title
+          path
+        }
+      }
+    }
+  }
+}
+</page-query>
+
+<script>
+import Heading from '~/components/Heading.vue'
+import Splash from '~/components/pixel-perfect/Splash.vue'
+import GameplaySection from '~/components/pixel-perfect/GameplaySection.vue'
+import Slider from '~/components/Slider.vue'
+import PostCard from '~/components/PostCard.vue'
+
+export default {
+  components: {
+    Heading,
+    Splash,
+    Slider,
+    PostCard,
+    GameplaySection
+  },
+  metaInfo: {
+    title: 'Home'
+  }
+}
+</script>
+
+<style lang="scss">
+  .outlined{
+    color: black;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  }
+  .gameplay{
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(31,15,31,1) 0%, rgba(32,25,64,1) 100%);
+  }
+</style>

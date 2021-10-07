@@ -1,18 +1,4 @@
 <template>
-  <Layout :show-logo="false">
-    <!-- Author intro -->
-    <Splash :show-title="true" />
-
-    <!-- List posts -->
-	<div class="relative bg-gray-900">
-
-    <div class="w-100 max-w-6xl mx-auto grid grid-cols-3 gap-6 py-16">
-      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
-    </div>
-  
-  </div>
-
-  </Layout>
 </template>
 
 <page-query>
@@ -44,20 +30,17 @@ query {
 </page-query>
 
 <script>
-import Splash from '~/components/pixel-perfect/Splash.vue'
-import PostCard from '~/components/PostCard.vue'
-
-export default {
-  components: {
-    Splash,
-    PostCard
-  },
-  metaInfo: {
-    title: 'Home'
-  }
-}
 </script>
 
 <style lang="scss">
-
+  .outlined{
+    color: black;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  }
+  .gameplay{
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(31,15,31,1) 0%, rgba(32,25,64,1) 100%);
+  }
 </style>

@@ -31,6 +31,6 @@ export default {
         @apply text-xl rounded-xl text-white py-2 px-8;
         border: 10px solid;
         border-image: url('../assets/images/ui-navbar.png') 10;
-        background-color: #152133;
+        background-color: rgba(15,23,36,0.95);
     }
 </style>

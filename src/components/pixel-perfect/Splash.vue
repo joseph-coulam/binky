@@ -43,5 +43,12 @@ export default {
 .splash {
 	background: rgb(2,0,36);
 	background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(36,23,51,1) 35%, rgba(34,19,74,1) 60%, rgba(59,160,254,1) 100%);
+	&::after{
+		@apply absolute w-full bottom-0;
+		content: "";
+		height: 28px;
+    	background-image: url('../../assets/images/divider-grass.png');
+	}
 }
+
 </style>

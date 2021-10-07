@@ -1,5 +1,5 @@
 <template>
-    <div class="toast fixed z-50 mx-auto left-0 right-0 max-w-2xl bottom-8 px-6 py-4 rounded-xl">
+    <div class="toast fixed z-50 mx-auto left-0 right-0 max-w-2xl bottom-8 px-6 py-4 rounded-xl animate-fadeUp">
         <div class="absolute top-2 right-2">
             <img src="@/assets/images/button-close.png" width="34" height="34" alt="Accessibility Toggle">
         </div>
@@ -26,4 +26,5 @@
         border-image: url('../assets/images/ui-outline-purple.png') 10;
         background-color: #9a51d9;
     }
+    
 </style>
