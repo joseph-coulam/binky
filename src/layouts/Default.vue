@@ -1,6 +1,8 @@
 <template>
   <div id="app">
 
+    <Toast />
+
     <header class="header fixed w-full z-50 top-4 px-4 flex justify-evenly items-start">
       <ToggleTheme class="flex flex-1 justify-start" />
       <Navigation class="flex flex-1 justify-center" />
@@ -23,6 +25,7 @@
 import ToggleTheme from '~/components/ToggleTheme.vue'
 import Navigation from '~/components/Navigation.vue'
 import Button from '~/components/Button.vue'
+import Toast from '~/components/Toast.vue'
 
 export default {
   props: {
@@ -30,7 +33,8 @@ export default {
   components: {
     ToggleTheme,
     Navigation,
-    Button
+    Button,
+    Toast
   }
 }
 </script>
