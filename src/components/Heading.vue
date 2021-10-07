@@ -1,5 +1,5 @@
 <template>
-    <div :data-heading="heading" class="heading relative">
+    <div :data-heading="heading" class="heading relative mx-auto w-full text-center">
         <span>{{heading}}</span>
     </div>
 </template>
@@ -12,36 +12,46 @@
 
 <style lang="scss">
     .heading {
-            @apply relative text-4xl font-bold text-white;
-            $stroke-size: 3px;
+            @apply relative inline-block text-4xl font-bold mb-4 text-white;
+            $stroke-size: 2px;
 
         &:before {
+            @apply absolute w-full top-0 left-0;
             content: attr(data-heading);
-            position: absolute;
-            top: 0px;
             left: 0;
             z-index: 1;
-            text-shadow: 0px -5px 0 blue, 0px 6px 0 blue, 3px 3px 0 yellow, 3px -3px 0 yellow, 3px -3px 0 yellow;
+            text-shadow: 0px -4px 0 black, 0px 5px 0 black, 2px 2px 0 black, 2px -2px 0 black, 2px 0px 0 black, 2px 5px 0 black, 2px -4px 0 black, 2px 2px 0 black, -2px -2px 0 black, -2px 0px 0 black, -2px 5px 0 black, -2px -4px 0 black,  -2px 2px 0 black;
         }
 
         span {
-            position: absolute;
+            position: relative;
             z-index: 3;
             color: #f9c054;
             text-shadow: 0px -2px 0px #ffe9b7;
-            -webkit-background-clip: text;
-                -moz-background-clip: text;
-                    background-clip: text;
         }
 
         &:after{
+            @apply absolute w-full top-0 left-0;
             content: attr(data-heading);
-            position: absolute;
-            top: 0px;
-            left: 0;
             color: #f9c054;
             text-shadow: 0px 3px 0px #cb5b2c;
             z-index: 2;
         }
     }
+
+
+@-webkit-keyframes shine {
+	0%, 10% {
+		background-position: -1000px;
+	}
+	20% {
+		background-position: top left;
+	}
+	90% {
+		background-position: top right;
+	}
+	100% {
+		background-position: 1000px;
+	}
+}
 </style>

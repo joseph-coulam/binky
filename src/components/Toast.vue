@@ -9,7 +9,7 @@
             </div>
             <div class="toast__text">
                 <p class="text-2xl">Accessibility</p>
-                <p>This site uses pixel art, but you can change the font by using the 'Aa' button</p>
+                <p>This site uses pixel art, but you can change the font by using the 'Aa' button in the top left corner</p>
             </div>
         </div>
     </div>

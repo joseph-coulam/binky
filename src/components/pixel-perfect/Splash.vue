@@ -7,7 +7,7 @@
 				</a>
 			</h1>
 
-			<p class="text-2xl text-center leading-relaxed text-white">
+			<p class="text-xl text-center leading-relaxed text-white">
 				In Pixel Perfect you take on the role of a God overlooking the universe of Pixia. As you expand a civilization through different ages you’ll meet challenges along the way; from building up an empire to fighting off hordes of enemies - how long do you think you can succeed as a God?
 			</p>
 

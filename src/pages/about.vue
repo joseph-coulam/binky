@@ -3,11 +3,11 @@
     <!-- Author intro -->
     <Splash />
 
-  <div class="bg-red-500 py-10">
+  <div class="gameplay relative py-10">
 
       <div class="w-100 max-w-4xl mx-auto">
-        <Heading heading="Example"/>
-        <p class="text-2xl text-center leading-relaxed text-white">
+        <Heading heading="Gameplay" />
+        <p class="text-xl text-center leading-relaxed text-white">
           In Pixel Perfect you take on the role of a God overlooking the universe of Pixia. As you expand a civilization through different ages you’ll meet challenges along the way; from building up an empire to fighting off hordes of enemies - how long do you think you can succeed as a God?
         </p>
       </div>
@@ -31,15 +31,22 @@
         </GameplaySection>
 
       </div>
-    <!-- List posts -->
-    <div class="relative bg-gray-900">
 
-      <div class="w-100 max-w-6xl mx-auto grid grid-cols-3 gap-6 py-16">
-        <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
-      </div>
+  </div>
+    <!-- List posts -->
+    <div class="updates relative py-10">
+        <div class="w-100 max-w-4xl mx-auto">
+
+          <Heading heading="Updates" />
+          <p class="text-xl text-center leading-relaxed text-white">
+            In Pixel Perfect you take on the role of a God overlooking the universe of Pixia. As you expand a civilization through different ages you’ll meet challenges along the way; from building up an empire to fighting off hordes of enemies - how long do you think you can succeed as a God?
+          </p>
+          <div class="w-100 max-w-6xl mx-auto grid grid-cols-3 gap-6 py-16">
+            <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
+          </div>
+        </div>
     
     </div>
-  </div>
 
   </Layout>
 </template>
@@ -101,6 +108,10 @@ export default {
     -webkit-text-stroke-color: black;
   }
   .gameplay{
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(31,15,31,1) 0%, rgba(32,25,64,1) 100%);
+  }
+  .updates{
     background: rgb(2,0,36);
     background: linear-gradient(180deg, rgba(31,15,31,1) 0%, rgba(32,25,64,1) 100%);
   }
