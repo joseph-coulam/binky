@@ -30,17 +30,16 @@ query {
 </page-query>
 
 <script>
-</script>
+import Author from '~/components/Author.vue'
+import PostCard from '~/components/PostCard.vue'
 
-<style lang="scss">
-  .outlined{
-    color: black;
-    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+export default {
+  components: {
+    Author,
+    PostCard
+  },
+  metaInfo: {
+    title: 'Home'
   }
-  .gameplay{
-    background: rgb(2,0,36);
-    background: linear-gradient(180deg, rgba(31,15,31,1) 0%, rgba(32,25,64,1) 100%);
-  }
-</style>
+}
+</script>
