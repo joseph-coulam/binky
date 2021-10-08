@@ -3,9 +3,9 @@
     <!-- Author intro -->
     <Splash />
 
-    <div class="gameplay relative py-10">
+    <div class="gameplay relative py-20">
       <div class="w-100 max-w-4xl mx-auto">
-        <Heading heading="Gameplay" />
+        <Heading heading="Gameplay" textDirection="center" textSize="large" />
         <p class="text-xl text-center leading-relaxed text-white">
           In Pixel Perfect you take on the role of a God overlooking the
           universe of Pixia. As you expand a civilization through different ages
@@ -22,10 +22,10 @@
       <!-- Gameplay Section -->
       <div class="max-w-6xl mx-auto">
         <GameplaySection
-          header="Test"
-          icon="assets/images/icon-map.png"
+          icon="icon-pickaxe"
           image="https://via.placeholder.com/150"
         >
+          <Heading heading="Build" textDirection="left" />
           In Pixel Perfect you take on the role of a God overlooking the
           universe of Pixia. As you expand a civilization through different ages
           you’ll meet challenges along the way; from building up an empire to
@@ -34,11 +34,11 @@
         </GameplaySection>
 
         <GameplaySection
-          header="Test"
-          icon="assets/images/icon-map.png"
+          icon="icon-sword"
           image="https://via.placeholder.com/150"
           direction="reverse"
         >
+          <Heading heading="Fight" textDirection="left" />
           In Pixel Perfect you take on the role of a God overlooking the
           universe of Pixia. As you expand a civilization through different ages
           you’ll meet challenges along the way; from building up an empire to
@@ -47,10 +47,10 @@
         </GameplaySection>
 
         <GameplaySection
-          header="Test"
-          icon="../../assets/images/icon-map.png"
+          icon="icon-map"
           image="https://via.placeholder.com/150"
         >
+          <Heading heading="Explore" />
           In Pixel Perfect you take on the role of a God overlooking the
           universe of Pixia. As you expand a civilization through different ages
           you’ll meet challenges along the way; from building up an empire to
@@ -59,10 +59,11 @@
         </GameplaySection>
       </div>
     </div>
+
     <!-- List posts -->
-    <div class="updates relative py-10">
+    <div class="updates relative py-20">
       <div class="w-100 max-w-4xl mx-auto">
-        <Heading heading="Updates" />
+        <Heading heading="Updates" textDirection="center" textSize="large" />
         <p class="text-xl text-center leading-relaxed text-white">
           In Pixel Perfect you take on the role of a God overlooking the
           universe of Pixia. As you expand a civilization through different ages
@@ -70,6 +71,7 @@
           fighting off hordes of enemies - how long do you think you can succeed
           as a God?
         </p>
+        </div>
         <div class="w-100 max-w-6xl mx-auto grid grid-cols-3 gap-6 py-16">
           <PostCard
             v-for="edge in $page.posts.edges"
@@ -78,7 +80,6 @@
           />
         </div>
       </div>
-    </div>
   </Layout>
 </template>
 

@@ -1,8 +1,9 @@
 <template>
   <div
-    class="splash relative overflow-hidden min-h-screen flex justify-center items-center"
+    class="splash relative overflow-hidden"
   >
-    <div class="w-100 max-w-2xl mx-auto center grid gap-8">
+  <div class="min-h-screen flex justify-center items-center">
+    <div class="w-100 max-w-2xl mx-auto center grid gap-8" data-aos="fade-in">
       <h1>
         <a href="/pixel-perfect">
           <img
@@ -26,6 +27,14 @@
         <Button button-text="Support Us" button-type="primary" />
         <Button button-text="Updates" button-type="secondary" />
       </div>
+    </div>
+    </div>
+
+    <div class="parallax">
+      <div class="parallax__plx04"></div>
+      <div class="parallax__plx03"></div>
+      <div class="parallax__plx01"></div>
+      <div class="parallax__plx02"></div>
     </div>
   </div>
 </template>
@@ -51,19 +60,62 @@ export default {
 
 <style lang="scss">
 .splash {
+  min-height: calc(100vh + 312px);
   background: rgb(2, 0, 36);
   background: linear-gradient(
     180deg,
     rgba(2, 0, 36, 1) 0%,
-    rgba(36, 23, 51, 1) 35%,
-    rgba(34, 19, 74, 1) 60%,
-    rgba(59, 160, 254, 1) 100%
+    rgb(30, 16, 46) 20%,
+    rgba(34, 19, 74, 1) 40%,
+    rgba(59, 160, 254, 1) 80%
   );
   &::after {
     @apply absolute w-full bottom-0;
     content: '';
     height: 28px;
     background-image: url('../../assets/images/divider-grass.png');
+  }
+}
+
+.parallax {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  &__plx01 {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 190px;
+    background-image: url('../../assets/images/splash-bush-2.png');
+    background-repeat: repeat-x;
+  }
+
+  &__plx02 {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 148px;
+    background-image: url('../../assets/images/splash-bush-1.png');
+    background-repeat: repeat-x;
+  }
+
+  &__plx03 {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 308px;
+    background-image: url('../../assets/images/splash-hills.png');
+    background-repeat: repeat-x;
+  }
+
+  &__plx04 {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 442px;
+    background-image: url('../../assets/images/splash-clouds.png');
+    background-repeat: repeat-x;
   }
 }
 </style>

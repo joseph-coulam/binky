@@ -1,18 +1,18 @@
 <template>
-    <div :data-heading="heading" class="heading relative mx-auto w-full text-center">
+    <div :data-heading="heading" :class="[`heading relative mx-auto w-full ${textDirection ? 'text-'+textDirection : ''} ${textSize==='large' ? 'text-4xl' : 'text-2xl'}`]">
         <span>{{heading}}</span>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['heading'],
+        props: ['heading', 'textDirection', 'textSize'],
     }
 </script>
 
 <style lang="scss">
     .heading {
-            @apply relative inline-block text-4xl font-bold mb-4 text-white;
+            @apply relative inline-block font-bold mb-4 text-white;
             $stroke-size: 2px;
 
         &:before {

@@ -2,7 +2,7 @@
     <div class="slider w-100 my-14 rounded-xl">
         <vue-glide type="slider" :perView="1" :gap="0">
             <vue-glide-slide v-for="(image, index) in images" :key="index">
-                <img class="h-96 w-full object-cover" :src="image.url">
+                <img class="slider__image w-full object-cover" :src="image.url">
             </vue-glide-slide>
         <template class="test" slot="control">
             <button class="absolute top-0 bottom-0 -left-12 my-auto" data-glide-dir="<">
@@ -43,5 +43,9 @@
         border: 10px solid;
         border-image: url('../assets/images/ui-outline-purple.png') 10;
         background-color: #9a51d9;
+
+        &__image {
+            max-height: 500px;
+        }
     }
 </style>

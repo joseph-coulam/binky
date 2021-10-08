@@ -1,23 +1,22 @@
 <template>
-    <div :class="['gameplay-section grid gap-20 my-20 items-center', 'gameplay-section--'+direction]">
+    <div :class="['gameplay-section grid gap-20 my-20 items-center', 'gameplay-section--'+direction]" data-aos="fade-up">
         <div class="gameplay-section__text text-white">
-            <h3 class="text-2xl font-bold mb-2">{{header}}</h3>
             <p class="text-xl leading-relaxed">
                 <slot />
             </p>
         </div>
         <div class="gameplay-section__image relative mt-4 w-full object-cover rounded-xl">
             <div class="gameplay-section__icon absolute left-6 -top-8 rounded-xl inline-block py-2 w-24">
-                <img class="mx-auto" :src=icon>
+                <img class="mx-auto" :src="require(`@/assets/images/${icon}.png`)" />
             </div>
-            <img class="w-full h-64 object-cover" :src=image>
+            <img class="w-full h-64 object-cover" :src="image">
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['header','direction','icon','image'],
+        props: ['direction','icon','image'],
     }
 </script>
 
