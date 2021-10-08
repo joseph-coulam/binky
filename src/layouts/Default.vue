@@ -31,12 +31,11 @@
 
 <script>
 import 'aos/dist/aos.css'
-
 import AOS from 'aos'
-import Accessibility from '~/components/Accessibility.vue';
-import Navigation from '~/components/Navigation.vue';
-import Button from '~/components/Button.vue';
-import Toast from '~/components/Toast.vue';
+import Accessibility from '~/components/Accessibility.vue'
+import Navigation from '~/components/Navigation.vue'
+import Button from '~/components/Button.vue'
+import Toast from '~/components/Toast.vue'
 
 export default {
   props: {},
@@ -47,11 +46,11 @@ export default {
     Toast
   },
   mounted() {
-  AOS.init({
-    duration: 800,
-    easing: 'ease-in-out-quad'
-  });
-}
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out-quad'
+    })
+  }
 }
 </script>
 

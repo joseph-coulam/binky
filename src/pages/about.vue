@@ -21,10 +21,7 @@
 
       <!-- Gameplay Section -->
       <div class="max-w-6xl mx-auto">
-        <GameplaySection
-          icon="icon-pickaxe"
-          image="mock"
-        >
+        <GameplaySection icon="icon-pickaxe" image="mock">
           <Heading heading="Build" textDirection="left" />
           In Pixel Perfect you take on the role of a God overlooking the
           universe of Pixia. As you expand a civilization through different ages
@@ -33,11 +30,7 @@
           as a God?
         </GameplaySection>
 
-        <GameplaySection
-          icon="icon-sword"
-          image="mock"
-          direction="reverse"
-        >
+        <GameplaySection icon="icon-sword" image="mock" direction="reverse">
           <Heading heading="Fight" textDirection="left" />
           In Pixel Perfect you take on the role of a God overlooking the
           universe of Pixia. As you expand a civilization through different ages
@@ -46,10 +39,7 @@
           as a God?
         </GameplaySection>
 
-        <GameplaySection
-          icon="icon-map"
-          image="mock"
-        >
+        <GameplaySection icon="icon-map" image="mock">
           <Heading heading="Explore" />
           In Pixel Perfect you take on the role of a God overlooking the
           universe of Pixia. As you expand a civilization through different ages
@@ -71,15 +61,15 @@
           fighting off hordes of enemies - how long do you think you can succeed
           as a God?
         </p>
-        </div>
-        <div class="w-100 max-w-6xl mx-auto grid grid-cols-3 gap-6 py-16">
-          <PostCard
-            v-for="edge in $page.posts.edges"
-            :key="edge.node.id"
-            :post="edge.node"
-          />
-        </div>
       </div>
+      <div class="w-100 max-w-6xl mx-auto grid grid-cols-3 gap-6 py-16">
+        <PostCard
+          v-for="edge in $page.posts.edges"
+          :key="edge.node.id"
+          :post="edge.node"
+        />
+      </div>
+    </div>
   </Layout>
 </template>
 

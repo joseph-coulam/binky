@@ -1,55 +1,41 @@
 <template>
-  <div
-    class="splash relative overflow-hidden"
-  >
-  <div class="min-h-screen flex justify-center items-center">
-    <div class="w-100 max-w-2xl mx-auto center grid gap-8" data-aos="fade-in">
-      <h1>
-        <a href="/pixel-perfect">
-          <img
-            class="mx-auto"
-            src="@/assets/images/header.gif"
-            width="314"
-            height="234"
-            alt="Pixel Perfect"
-          />
-        </a>
-      </h1>
+  <div class="splash relative overflow-hidden">
+    <div class="min-h-screen flex justify-center items-center">
+      <div class="w-100 max-w-2xl mx-auto center grid gap-8" data-aos="fade-in">
+        <h1>
+          <a href="/pixel-perfect">
+            <img
+              class="mx-auto"
+              src="@/assets/images/header.gif"
+              width="314"
+              height="234"
+              alt="Pixel Perfect"
+            />
+          </a>
+        </h1>
 
-      <p class="text-xl text-center leading-relaxed text-white">
-        In Pixel Perfect you take on the role of a God overlooking the universe
-        of Pixia. As you expand a civilization through different ages you’ll
-        meet challenges along the way; from building up an empire to fighting
-        off hordes of enemies - how long do you think you can succeed as a God?
-      </p>
+        <p class="text-xl text-center leading-relaxed text-white">
+          In Pixel Perfect you take on the role of a God overlooking the
+          universe of Pixia. As you expand a civilization through different ages
+          you’ll meet challenges along the way; from building up an empire to
+          fighting off hordes of enemies - how long do you think you can succeed
+          as a God?
+        </p>
 
-      <div class="max-w-md mx-auto grid grid-cols-2 gap-4">
-        <Button button-text="Support Us" button-type="primary" />
-        <Button button-text="Updates" button-type="secondary" />
+        <div class="max-w-md mx-auto grid grid-cols-2 gap-4">
+          <Button button-text="Support Us" button-type="primary" />
+          <Button button-text="Updates" button-type="secondary" />
+        </div>
       </div>
-    </div>
     </div>
 
     <div class="parallax">
-         <kinesis-container event="scroll">
-              <kinesis-element :strength="100">
-                <div class="parallax__plx04"></div>
-              </kinesis-element>
-              <kinesis-element :strength="50">
-                <div class="parallax__plx03"></div>
-              </kinesis-element>
-              <kinesis-element :strength="200">
-                <div class="parallax__plx01"></div>
-              </kinesis-element>
-              <kinesis-element :strength="10">
-                <div class="parallax__plx02"></div>
-              </kinesis-element>
-          </kinesis-container>
-        
-
-        
+      <div class="parallax__plx04" v-rellax="{ speed: -3 }"></div>
+      <div class="parallax__plx03" v-rellax="{ speed: -2 }"></div>
+      <div class="parallax__plx01" v-rellax="{ speed: -1 }"></div>
+      <div class="parallax__plx02" v-rellax="{ speed: 0 }"></div>
     </div>
-    </div>
+  </div>
 </template>
 
 <static-query>
@@ -61,14 +47,11 @@ query {
 </static-query>
 
 <script>
-import { KinesisContainer, KinesisElement} from 'vue-kinesis';
 import Button from '~/components/Button'
 
 export default {
   components: {
-    Button,
-    KinesisContainer,
-    KinesisElement,
+    Button
   },
   props: ['showTitle']
 }
