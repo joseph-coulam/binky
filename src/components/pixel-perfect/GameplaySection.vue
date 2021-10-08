@@ -9,7 +9,7 @@
             <div class="gameplay-section__icon absolute left-6 -top-8 rounded-xl inline-block py-2 w-24">
                 <img class="mx-auto" :src="require(`@/assets/images/${icon}.png`)" />
             </div>
-            <img class="w-full h-64 object-cover" :src="image">
+            <img class="w-full h-64 object-cover" :src="require(`@/assets/images/${image}.png`)">
         </div>
     </div>
 </template>

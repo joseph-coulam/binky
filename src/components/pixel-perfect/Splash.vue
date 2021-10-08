@@ -31,12 +31,25 @@
     </div>
 
     <div class="parallax">
-      <div class="parallax__plx04"></div>
-      <div class="parallax__plx03"></div>
-      <div class="parallax__plx01"></div>
-      <div class="parallax__plx02"></div>
+         <kinesis-container event="scroll">
+              <kinesis-element :strength="100">
+                <div class="parallax__plx04"></div>
+              </kinesis-element>
+              <kinesis-element :strength="50">
+                <div class="parallax__plx03"></div>
+              </kinesis-element>
+              <kinesis-element :strength="200">
+                <div class="parallax__plx01"></div>
+              </kinesis-element>
+              <kinesis-element :strength="10">
+                <div class="parallax__plx02"></div>
+              </kinesis-element>
+          </kinesis-container>
+        
+
+        
     </div>
-  </div>
+    </div>
 </template>
 
 <static-query>
@@ -48,11 +61,14 @@ query {
 </static-query>
 
 <script>
+import { KinesisContainer, KinesisElement} from 'vue-kinesis';
 import Button from '~/components/Button'
 
 export default {
   components: {
-    Button
+    Button,
+    KinesisContainer,
+    KinesisElement,
   },
   props: ['showTitle']
 }

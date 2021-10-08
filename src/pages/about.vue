@@ -23,7 +23,7 @@
       <div class="max-w-6xl mx-auto">
         <GameplaySection
           icon="icon-pickaxe"
-          image="https://via.placeholder.com/150"
+          image="mock"
         >
           <Heading heading="Build" textDirection="left" />
           In Pixel Perfect you take on the role of a God overlooking the
@@ -35,7 +35,7 @@
 
         <GameplaySection
           icon="icon-sword"
-          image="https://via.placeholder.com/150"
+          image="mock"
           direction="reverse"
         >
           <Heading heading="Fight" textDirection="left" />
@@ -48,7 +48,7 @@
 
         <GameplaySection
           icon="icon-map"
-          image="https://via.placeholder.com/150"
+          image="mock"
         >
           <Heading heading="Explore" />
           In Pixel Perfect you take on the role of a God overlooking the

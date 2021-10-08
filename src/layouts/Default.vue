@@ -30,12 +30,13 @@
 </template>
 
 <script>
-import AOS from 'aos'
 import 'aos/dist/aos.css'
-import Accessibility from '~/components/Accessibility.vue'
-import Navigation from '~/components/Navigation.vue'
-import Button from '~/components/Button.vue'
-import Toast from '~/components/Toast.vue'
+
+import AOS from 'aos'
+import Accessibility from '~/components/Accessibility.vue';
+import Navigation from '~/components/Navigation.vue';
+import Button from '~/components/Button.vue';
+import Toast from '~/components/Toast.vue';
 
 export default {
   props: {},
