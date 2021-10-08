@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import Accessibility from '~/components/Accessibility.vue'
 import Navigation from '~/components/Navigation.vue'
 import Button from '~/components/Button.vue'
@@ -42,7 +44,13 @@ export default {
     Navigation,
     Button,
     Toast
-  }
+  },
+  mounted() {
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out-quad'
+  });
+}
 }
 </script>
 
