@@ -1,7 +1,10 @@
 <template>
   <div class="splash relative overflow-hidden">
     <div class="min-h-screen flex justify-center items-center">
-      <div class="w-100 max-w-2xl mx-auto center grid gap-8" data-aos="fade-in">
+      <div
+        class="relative w-100 max-w-2xl mt-20 mx-auto center grid gap-8 z-10"
+        data-aos="fade-in"
+      >
         <h1>
           <a href="/pixel-perfect">
             <img
@@ -30,8 +33,8 @@
     </div>
 
     <div class="parallax">
-      <div class="parallax__plx04" v-rellax="{ speed: -3 }"></div>
-      <div class="parallax__plx03" v-rellax="{ speed: -2 }"></div>
+      <div class="parallax__plx04" v-rellax="{ speed: -5 }"></div>
+      <div class="parallax__plx03" v-rellax="{ speed: -3 }"></div>
       <div class="parallax__plx01" v-rellax="{ speed: -1 }"></div>
       <div class="parallax__plx02" v-rellax="{ speed: 0 }"></div>
     </div>

@@ -3,8 +3,8 @@
     <!-- Author intro -->
     <Splash />
 
-    <div class="gameplay relative py-20">
-      <div class="w-100 max-w-4xl mx-auto">
+    <div class="gameplay relative py-20 p-2 sm:px-4 lg:px-8">
+      <div class="w-100 max-w-2xl mx-auto">
         <Heading heading="Gameplay" textDirection="center" textSize="large" />
         <p class="text-xl text-center leading-relaxed text-white">
           In Pixel Perfect you take on the role of a God overlooking the
@@ -62,7 +62,7 @@
           as a God?
         </p>
       </div>
-      <div class="w-100 max-w-6xl mx-auto grid grid-cols-3 gap-6 py-16">
+      <div class="w-100 max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4 py-16">
         <PostCard
           v-for="edge in $page.posts.edges"
           :key="edge.node.id"
