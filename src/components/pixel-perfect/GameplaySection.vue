@@ -12,7 +12,7 @@
       class="gameplay-section__image relative mt-4 w-full object-cover rounded-xl"
     >
       <div
-        class="gameplay-section__icon absolute left-auto md:left-6 right-6 md:right-auto -top-8 rounded-xl inline-block py-2 w-24"
+        class="gameplay-section__icon absolute left-auto sm:left-6 right-6 sm:right-auto -top-8 rounded-xl inline-block py-2 w-24"
       >
         <img class="mx-auto" :src="require(`@/assets/images/${icon}.png`)" />
       </div>
