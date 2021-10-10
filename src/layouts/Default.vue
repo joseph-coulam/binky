@@ -18,14 +18,7 @@
       <slot />
     </main>
 
-    <footer class="footer">
-      <span class="footer__copyright"
-        >Copyright © {{ new Date().getFullYear() }}.
-      </span>
-      <span class="footer__links"
-        >Powered by <a href="//www.suits.at"> SUITS </a></span
-      >
-    </footer>
+    <Footer />
   </div>
 </template>
 
@@ -36,6 +29,7 @@ import Accessibility from '~/components/Accessibility.vue'
 import Navigation from '~/components/Navigation.vue'
 import Button from '~/components/Button.vue'
 import Toast from '~/components/Toast.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
   props: {},
@@ -43,7 +37,8 @@ export default {
     Accessibility,
     Navigation,
     Button,
-    Toast
+    Toast,
+    Footer
   },
   mounted() {
     AOS.init({
