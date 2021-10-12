@@ -1,5 +1,8 @@
 <template>
   <div class="splash relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 ">
+      <MagicBackdrop />
+    </div>
     <div class="min-h-screen flex justify-center items-center">
       <div
         class="relative w-100 max-w-2xl mt-20 mx-auto center grid gap-8 z-10"
@@ -51,10 +54,12 @@ query {
 
 <script>
 import Button from '~/components/Button'
+import MagicBackdrop from '~/components/pixel-perfect/MagicBackdrop'
 
 export default {
   components: {
-    Button
+    Button,
+    MagicBackdrop
   },
   props: ['showTitle']
 }

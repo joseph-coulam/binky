@@ -36,7 +36,7 @@ export default {
 
   @screen sm {
     @apply grid gap-10 my-20 text-left items-center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-areas: 'gridImage gridText';
   }
 

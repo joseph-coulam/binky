@@ -2,7 +2,6 @@
   <Layout :show-logo="false">
     <!-- Author intro -->
     <Splash />
-
     <div class="gameplay relative py-20 p-2 sm:px-4 lg:px-8">
       <div class="w-100 max-w-2xl mx-auto">
         <Heading heading="Gameplay" textDirection="center" textSize="large" />
