@@ -1,24 +1,38 @@
 <template>
-  <Scene @complete="complete" @scene="onScene">
-    <property name="clearColor" :color="bgColor"></property>
-    <Camera type="arcRotate" v-model="camera" radius="5"></Camera>
-  </Scene>
+  <ClientOnly>
+    <Scene @complete="complete" @scene="onScene">
+      <Property name="clearColor" :color="bgColor"></Property>
+      <Camera type="arcRotate" v-model="camera" :radius="5"></Camera>
+    </Scene>
+  </ClientOnly>
 </template>
 
 <script>
-import Side from '~/components/pixel-perfect/Side'
-import { BABYLON } from 'vue-babylonjs'
-
 export default {
-  components: {
-    Side
-  },
   data() {
     return {
       camera: null,
-      kernel: 32.0,
-      bgColor: new BABYLON.Color4(0, 0, 0, 0)
+      bgColor: null,
+      BABYLON: null
     }
+  },
+  components: {
+    Scene: () =>
+      import('vue-babylonjs')
+        .then((m) => m.Scene)
+        .catch(),
+    Camera: () =>
+      import('vue-babylonjs')
+        .then((m) => m.Camera)
+        .catch(),
+    Property: () =>
+      import('vue-babylonjs')
+        .then((m) => m.Property)
+        .catch()
+  },
+  mounted() {
+    console.log(this)
+    this.bgColor = new BABYLON.Color4(0, 0, 0, 0)
   },
   methods: {
     onScene(scene) {

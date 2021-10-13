@@ -1,7 +1,9 @@
 <template>
   <div class="splash relative overflow-hidden">
     <div class="absolute top-0 left-0 right-0 ">
-      <MagicBackdrop />
+      <ClientOnly>
+        <MagicBackdrop />
+      </ClientOnly>
     </div>
     <div class="min-h-screen flex justify-center items-center">
       <div
