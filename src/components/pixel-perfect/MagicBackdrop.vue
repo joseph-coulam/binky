@@ -1,10 +1,8 @@
 <template>
-  <ClientOnly>
     <Scene @complete="complete" @scene="onScene">
       <Property name="clearColor" :color="bgColor"></Property>
       <Camera type="arcRotate" v-model="camera" :radius="5"></Camera>
     </Scene>
-  </ClientOnly>
 </template>
 
 <script>
@@ -31,7 +29,7 @@ export default {
         .catch()
   },
   mounted() {
-    console.log(this)
+    this.BABYLON = window.BABYLON;
     this.bgColor = new BABYLON.Color4(0, 0, 0, 0)
   },
   methods: {

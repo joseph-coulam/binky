@@ -6,18 +6,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      pixelFonts: true
-    }
-  },
   methods: {
     toggleFonts() {
-      this.pixelFonts = !this.pixelFonts
+      this.$store.commit('changeFont')
     }
-  },
-  mounted() {
-    // if (window.__theme == 'dark') this.darkTheme = true
   }
 }
 </script>
