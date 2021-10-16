@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="this.$store.state.pixelFont ? 'font-type--pixel' : 'font-type--standard'">
     <Toast />
 
     <header
@@ -39,6 +39,11 @@ export default {
     Button,
     Toast,
     Footer
+  },
+  data () {
+    return {
+      pixelFonts: true
+    }
   },
   mounted() {
     AOS.init({
