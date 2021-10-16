@@ -27,7 +27,5 @@ export default function (Vue, { appOptions, router, head, isClient }) {
   // Client Side Code
   if (process.isClient) {
     Vue.use(require('vue-rellax').default);
-    Vue.use(require('vue-babylonjs'));
-    window.BABYLON = require('vue-babylonjs').BABYLON
   }
 }

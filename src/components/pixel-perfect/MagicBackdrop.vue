@@ -1,46 +1,41 @@
 <template>
-    <Scene @complete="complete" @scene="onScene">
-      <Property name="clearColor" :color="bgColor"></Property>
-      <Camera type="arcRotate" v-model="camera" :radius="5"></Camera>
-    </Scene>
+    <canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
 </template>
 
 <script>
+import * as BABYLON from '@babylonjs/core';
+
 export default {
+  
   data() {
     return {
       camera: null,
       bgColor: null,
-      BABYLON: null
     }
   },
-  components: {
-    Scene: () =>
-      import('vue-babylonjs')
-        .then((m) => m.Scene)
-        .catch(),
-    Camera: () =>
-      import('vue-babylonjs')
-        .then((m) => m.Camera)
-        .catch(),
-    Property: () =>
-      import('vue-babylonjs')
-        .then((m) => m.Property)
-        .catch()
-  },
   mounted() {
-    this.BABYLON = window.BABYLON;
-    this.bgColor = new BABYLON.Color4(0, 0, 0, 0)
+				this.createScene();
   },
   methods: {
-    onScene(scene) {
+    createScene() {
+      	
+        this.canvas = document.getElementById('renderCanvas');
+        this.engine = new BABYLON.Engine(this.canvas, true);
+        const scene = new BABYLON.Scene(this.engine);
+        const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 3, new BABYLON.Vector3(0, 0, 0), scene);
+        camera.attachControl(this.canvas, true);
+
+      // scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
+
       BABYLON.ParticleHelper.CreateFromSnippetAsync('2JRD1A#2', scene, false) // 2nd Particle Sytem - Core
       BABYLON.ParticleHelper.CreateFromSnippetAsync('EXUQ7M#5', scene, false) // 3rd Particle Sytem - Sparks
-      var sphereSpark = BABYLON.MeshBuilder.CreateSphere(
+
+      let sphereSpark = BABYLON.MeshBuilder.CreateSphere(
         'sphereSpark',
         { diameter: 0.4, segments: 32 },
         scene
       )
+
       sphereSpark.isVisible = false
       BABYLON.ParticleHelper.CreateFromSnippetAsync(
         'UY098C#3',
@@ -48,13 +43,17 @@ export default {
         false
       ).then((system) => {
         system.emitter = sphereSpark
-      }) // 4th Particle Sytem - Smoke
-      var sphereSmoke = BABYLON.MeshBuilder.CreateSphere(
+      }) 
+      
+      //  4th Particle Sytem - Smoke
+      let sphereSmoke = BABYLON.MeshBuilder.CreateSphere(
         'sphereSmoke',
         { diameter: 1.9, segments: 32 },
         scene
       )
+
       sphereSmoke.isVisible = false
+
       BABYLON.ParticleHelper.CreateFromSnippetAsync(
         'UY098C#6',
         scene,
@@ -63,9 +62,9 @@ export default {
         system.emitter = sphereSmoke
       })
 
-      var particleSystem = new BABYLON.ParticleSystem('particles', 500, scene)
+      let particleSystem = new BABYLON.ParticleSystem('particles', 500, scene)
       particleSystem.particleTexture = new BABYLON.Texture(
-        'textures/flare.png',
+        require('../../assets/images/flare.png'),
         scene
       )
 
@@ -91,7 +90,7 @@ export default {
       particleSystem.preWarmCycles = 50
 
       /******* Emission Space ********/
-      var sphereEmitter = particleSystem.createSphereEmitter(100)
+      let sphereEmitter = particleSystem.createSphereEmitter(100)
       sphereEmitter.radiusRange = 0.7
 
       // Speed
@@ -101,9 +100,10 @@ export default {
 
       // Start the particle system
       particleSystem.start()
-    },
-    complete(e) {
-      BABYLON.Effect.ShadersStore.julianVertexShader = `
+
+
+ // third pass: merge two previous passes
+      BABYLON.Effect.ShadersStore.finalVertexShader = `
         precision highp float;
         attribute vec3 position;
         attribute vec2 uv;
@@ -113,29 +113,32 @@ export default {
             gl_Position=worldViewProjection*vec4(position,1.),
             vUV=uv;
         }`
-      BABYLON.Effect.ShadersStore.julianPixelShader = `
+      BABYLON.Effect.ShadersStore.finalPixelShader = `
         precision highp float;
         varying vec2 vUV;
         uniform sampler2D textureSampler;
         void main(){
-            float pixel_w=15.,pixel_h=15.,rt_w=3000.,rt_h=3000.;
+            float pixel_w=20.,pixel_h=20.,rt_w=3000.,rt_h=3000.;
             vec3 tc=vec3(1.,0.,0.);
             float dx=pixel_w*(1./rt_w),dy=pixel_h*(1./rt_h);
             vec2 coord=vec2(dx*floor(vUV.x/dx),dy*floor(vUV.y/dy));
             tc=texture2D(textureSampler,coord).xyz;gl_FragColor=vec4(tc,1.);
         }`
-      let julian = new BABYLON.PostProcess(
-        'julian',
-        'julian',
+    // create the
+    var finalPass = new BABYLON.PostProcess(
+        'Final compose shader', 
+        'final',  // shader
+        null, // attributes
         null,
-        null,
-        1,
-        this.camera
-      )
-      var processAlpha = new BABYLON.PassPostProcess('pass', 1.0, this.camera)
-      processAlpha.alphaMode = BABYLON.Engine.ALPHA_ADD
-      processAlpha.alphaConstants = new BABYLON.Color4(0.5, 0.5, 0.5, 0)
-    }
+        1.0,  // options
+        camera, // camera
+    );
+
+
+    this.engine.runRenderLoop(() => {
+        scene.render();
+      });
+    },
   }
 }
 </script>
@@ -143,5 +146,7 @@ export default {
 <style lang="scss">
 canvas {
   background: transparent;
+  width: 100vw;
+  height: 750px;
 }
 </style>

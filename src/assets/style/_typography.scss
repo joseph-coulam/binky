@@ -2,6 +2,8 @@
 
 .font-type{
   &--pixel {
+    font-smooth: never;
+    -webkit-font-smoothing : none;  
     font-family: lores-12, monospace;
   }
 
