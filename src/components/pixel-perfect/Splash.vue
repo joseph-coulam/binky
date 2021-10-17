@@ -7,7 +7,7 @@
     </div>
     <div class="min-h-screen flex justify-center items-center">
       <div
-        class="relative w-100 max-w-2xl mt-20 mx-auto center grid gap-8 z-10"
+        class="relative w-100 max-w-2xl mt-20 px-6 mx-auto center grid gap-8 z-10"
         data-aos="fade-in"
       >
         <h1>
@@ -37,7 +37,10 @@
       </div>
     </div>
 
-    <div class="parallax">
+    <div class="splash__peep aliased">
+    </div>
+
+    <div class="aliased parallax">
       <div class="parallax__plx04" v-rellax="{ speed: -5 }"></div>
       <div class="parallax__plx03" v-rellax="{ speed: -3 }"></div>
       <div class="parallax__plx01" v-rellax="{ speed: -1 }"></div>
@@ -78,11 +81,55 @@ export default {
     rgba(34, 19, 74, 1) 40%,
     rgba(59, 160, 254, 1) 80%
   );
+
   &::after {
     @apply absolute w-full bottom-0;
     content: '';
     height: 28px;
     background-image: url('../../assets/images/divider-grass.png');
+  }
+
+  &::before {
+    @apply absolute top-0 w-full h-screen bg-fixed bg-repeat-x opacity-20;
+    content: '';
+    background-image: url('../../assets/images/splash-stars.png');
+  }
+  
+  &__peep{
+    @apply absolute left-0 right-0 bottom-4 mx-auto z-20;
+    width: 56px;
+    height: 392px;
+
+    &::before{
+      @apply absolute w-full z-10;
+      content:"";
+      bottom: -2px;
+      left: 5px;
+      width: 24px;
+      height: 58px;
+      background-image: url('../../assets/images/splash-peep.png');
+    }
+
+    &::after{
+      @apply absolute w-full z-10;
+      content:"";
+      width: 56px;
+      left: -13px;
+      height: 392px;
+      bottom: 10px;
+      background-image: url('../../assets/images/splash-shine.png');
+      animation: splashShine .8s ease-in-out infinite;
+      animation-direction: alternate;
+    }
+  }
+
+  @keyframes splashShine {
+    0% {
+      opacity: .8;
+    }
+    100% {
+      opacity: .5;
+    }
   }
 }
 
