@@ -2,7 +2,7 @@
   <Layout :show-logo="false">
     <!-- Author intro -->
     <Splash />
-    <div class="gameplay relative py-20 p-2 sm:px-4 lg:px-8">
+    <div class="gameplay relative py-20 px-6 sm:px-4 lg:px-8">
       <div class="w-100 max-w-2xl mx-auto">
         <Heading heading="Gameplay" textDirection="center" textSize="large" />
         <p class="text-xl text-center leading-relaxed text-white">
@@ -19,7 +19,7 @@
       </div>
 
       <!-- Gameplay Section -->
-      <div class="max-w-6xl mx-auto">
+      <div class="max-w-4xl mx-auto">
         <GameplaySection icon="icon-pickaxe" image="mock">
           <Heading heading="Build" textDirection="left" />
           In Pixel Perfect you take on the role of a God overlooking the

@@ -1,7 +1,11 @@
 <template>
   <nav class="hidden md:block navigation mx-auto center">
     <ul class="grid grid-flow-col gap-10 justify-centerauto-cols-max">
-      <li v-for="link in navigation" :key="link.name" class="inline-block">
+      <li
+        v-for="link in navigation"
+        :key="link.name"
+        class="inline-block text-center"
+      >
         <a
           :href="link.href"
           class="text-lg font-bold text-white hover:text-indigo-50"
