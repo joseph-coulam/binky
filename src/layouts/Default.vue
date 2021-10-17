@@ -3,15 +3,23 @@
     <Toast />
 
     <header
-      class="header fixed w-full z-50 top-4 px-4 flex justify-evenly items-start"
+      class="header fixed w-full z-50 top-4 px-4 flex justify-evenly items-center lg:items-start"
     >
-      <Accessibility class="flex flex-1 justify-start" />
-      <Navigation class="flex flex-1 justify-center" />
+      <!-- Menu Items -->
+      <div class="flex flex-1 justify-start">
+        <MobileMenuButton @click.native="toggleMenu" class="block lg:hidden mr-3 lg:mr-0 opacity-80 hover:opacity-100" />
+        <Accessibility @click.native="toggleFonts" class="opacity-90 hover:opacity-100" />
+      </div>
+
+      <!-- Navigation -->
+      <Navigation class="lg:flex lg:flex-1 justify-center" />
+
+      <!-- Kickstarter -->
       <div class="flex flex-1 justify-end">
-      <Button
-        button-text="Kickstarter"
-        button-type="kickstarter"
-      />
+        <Button
+          button-text="Kickstarter"
+          button-type="kickstarter"
+        />
       </div>
     </header>
 
@@ -31,6 +39,7 @@ import Navigation from '~/components/Navigation.vue'
 import Button from '~/components/Button.vue'
 import Toast from '~/components/Toast.vue'
 import Footer from '~/components/Footer.vue'
+import MobileMenuButton from '~/components/MobileMenuButton.vue'
 
 export default {
   props: {},
@@ -39,7 +48,8 @@ export default {
     Navigation,
     Button,
     Toast,
-    Footer
+    Footer,
+    MobileMenuButton
   },
   data () {
     return {
@@ -51,6 +61,14 @@ export default {
       duration: 800,
       easing: 'ease-in-out-quad'
     })
+  },
+  methods: {
+    toggleFonts() {
+      this.$store.commit('changeFont')
+    },
+    toggleMenu() {
+      this.$store.commit('toggleMenu')
+    }
   }
 }
 </script>

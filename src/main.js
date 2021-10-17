@@ -15,11 +15,15 @@ export default function (Vue, { appOptions, router, head, isClient }) {
   // Basic Store, Compartmentalise if needed
   appOptions.store = new Vuex.Store({
     state: {
-      pixelFont: true
+      pixelFont: true,
+      activeMenu: false
     },
     mutations: {
       changeFont (state) {
         state.pixelFont = !state.pixelFont
+      },
+      toggleMenu (state) {
+        state.activeMenu = !state.activeMenu
       }
     }
   })

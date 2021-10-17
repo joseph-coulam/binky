@@ -1,6 +1,6 @@
 <template>
   <Layout :show-logo="false">
-    <!-- Author intro -->
+
     <div>
       <div id="about" class="anchor"></div>
       <Splash />
