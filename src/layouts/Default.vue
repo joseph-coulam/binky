@@ -7,11 +7,12 @@
     >
       <Accessibility class="flex flex-1 justify-start" />
       <Navigation class="flex flex-1 justify-center" />
+      <div class="flex flex-1 justify-end">
       <Button
-        class="flex flex-1 justify-end"
         button-text="Kickstarter"
         button-type="kickstarter"
       />
+      </div>
     </header>
 
     <main class="main">

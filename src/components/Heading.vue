@@ -12,11 +12,11 @@
 
 <style lang="scss">
     .heading {
-            @apply relative inline-block font-bold mb-4 text-white;
+            @apply relative inline-block mb-4 text-white uppercase font-display;
             $stroke-size: 2px;
 
         &:before {
-            @apply absolute w-full top-0 left-0;
+            @apply absolute w-full top-0 left-0 font-display;
             content: attr(data-heading);
             left: 0;
             z-index: 1;
@@ -31,7 +31,7 @@
         }
 
         &:after{
-            @apply absolute w-full top-0 left-0;
+            @apply absolute w-full top-0 left-0 font-display;
             content: attr(data-heading);
             color: #f9c054;
             text-shadow: 0px 3px 0px #cb5b2c;
