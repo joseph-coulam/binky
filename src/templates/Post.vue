@@ -3,9 +3,8 @@
     <div class="max-w-4xl mx-auto px-6 my-32">
       <div class="post-title mb-4">
         <h1 class="text-2xl font-bold mb-2 post-title__text">
-          {{ $page.post.title }}
         </h1>
-
+        <Heading :heading="$page.post.title" textDirection="left" textSize="large" />
         <PostMeta :post="$page.post" />
       </div>
 
@@ -20,7 +19,7 @@
         </div>
 
         <PostTags class="mb-4" :post="$page.post" />
-        <div class="post__content" v-html="$page.post.content" />
+        <div class="post__content text-2xl" v-html="$page.post.content" />
       </div>
     </div>
   </Layout>
@@ -30,12 +29,14 @@
 import PostMeta from '~/components/PostMeta'
 import PostTags from '~/components/PostTags'
 import Author from '~/components/Author.vue'
+import Heading from '~/components/Heading.vue'
 
 export default {
   components: {
     Author,
     PostMeta,
-    PostTags
+    PostTags,
+    Heading
   },
   metaInfo() {
     return {
@@ -77,6 +78,11 @@ query Post ($id: ID!) {
     border-image: url('../assets/images/ui-outline-purple.png') 10;
     background-color: #9a51d9;
     max-height: 300px;
+  }
+  &__content{
+    p {
+      @apply mb-8;
+    }
   }
 }
 </style>
