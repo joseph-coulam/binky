@@ -1,5 +1,5 @@
 <template>
-  <nav :class="['aliased navigation lg:block mx-auto center flex flex-col', {'navigation--active': this.$store.state.activeMenu}]">
+  <nav :class="['aliased navigation lg:block mx-auto center flex flex-col', {'navigation--active': !this.$store.state.activeMenu}]">
 
     <div @click="toggleMenu" class="absolute top-2 right-2 opacity-80 hover:opacity-100 lg:hidden">
       <img class
