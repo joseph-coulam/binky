@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer bg-black text-white text-center py-4 px-4">
+  <footer class="aliased footer bg-black text-white text-center py-4 px-4">
     <span class="footer__copyright"
       >Copyright © {{ new Date().getFullYear() }}.
     </span>

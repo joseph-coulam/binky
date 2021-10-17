@@ -272,6 +272,7 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
+      display: ['lores-9-wide', 'monospace']
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

@@ -1,8 +1,13 @@
 <template>
   <Layout :show-logo="false">
     <!-- Author intro -->
-    <Splash />
-    <div class="gameplay relative py-20 p-2 sm:px-4 lg:px-8">
+    <div>
+      <div id="about" class="anchor"></div>
+      <Splash />
+    </div>
+    
+    <div class="gameplay relative py-20 px-6 sm:px-4 lg:px-8">
+      <div id="gameplay" class="anchor"></div>
       <div class="w-100 max-w-2xl mx-auto">
         <Heading heading="Gameplay" textDirection="center" textSize="large" />
         <p class="text-xl text-center leading-relaxed text-white">
@@ -19,8 +24,8 @@
       </div>
 
       <!-- Gameplay Section -->
-      <div class="max-w-6xl mx-auto">
-        <GameplaySection icon="icon-pickaxe" image="mock">
+      <div class="max-w-4xl mx-auto">
+        <GameplaySection icon="icon-pickaxe" image="temp">
           <Heading heading="Build" textDirection="left" />
           In Pixel Perfect you take on the role of a God overlooking the
           universe of Pixia. As you expand a civilization through different ages
@@ -29,7 +34,7 @@
           as a God?
         </GameplaySection>
 
-        <GameplaySection icon="icon-sword" image="mock" direction="reverse">
+        <GameplaySection icon="icon-sword" image="temp" direction="reverse">
           <Heading heading="Fight" textDirection="left" />
           In Pixel Perfect you take on the role of a God overlooking the
           universe of Pixia. As you expand a civilization through different ages
@@ -38,7 +43,7 @@
           as a God?
         </GameplaySection>
 
-        <GameplaySection icon="icon-map" image="mock">
+        <GameplaySection icon="icon-map" image="temp">
           <Heading heading="Explore" />
           In Pixel Perfect you take on the role of a God overlooking the
           universe of Pixia. As you expand a civilization through different ages
@@ -51,7 +56,8 @@
 
     <!-- List posts -->
     <div class="updates relative py-20">
-      <div class="w-100 max-w-4xl mx-auto">
+      <div id="updates" class="anchor"></div>
+      <div class="w-100 max-w-4xl px-6 mx-auto">
         <Heading heading="Updates" textDirection="center" textSize="large" />
         <p class="text-xl text-center leading-relaxed text-white">
           In Pixel Perfect you take on the role of a God overlooking the
@@ -61,7 +67,7 @@
           as a God?
         </p>
       </div>
-      <div class="w-100 max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4 py-16">
+      <div class="w-100 max-w-6xl mx-auto grid md:grid-cols-3 px-6 gap-6 py-16">
         <PostCard
           v-for="edge in $page.posts.edges"
           :key="edge.node.id"
@@ -122,12 +128,17 @@ export default {
 </script>
 
 <style lang="scss">
+.anchor{
+  @apply relative block h-0 w-0 -top-32;
+}
+
 .outlined {
   color: black;
   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
+
 .gameplay {
   background: rgb(2, 0, 36);
   background: linear-gradient(
@@ -136,6 +147,7 @@ export default {
     rgba(32, 25, 64, 1) 100%
   );
 }
+
 .updates {
   background: rgb(2, 0, 36);
   background: linear-gradient(

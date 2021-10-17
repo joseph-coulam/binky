@@ -1,11 +1,10 @@
 <template>
   <Layout>
-    <div class="max-w-6xl mx-auto">
-      <div class="post-title">
-        <h1 class="post-title__text">
-          {{ $page.post.title }}
+    <div class="max-w-4xl mx-auto px-6 my-32">
+      <div class="post-title mb-4">
+        <h1 class="text-2xl font-bold mb-2 post-title__text">
         </h1>
-
+        <Heading :heading="$page.post.title" textDirection="left" textSize="large" />
         <PostMeta :post="$page.post" />
       </div>
 
@@ -13,23 +12,15 @@
         <div class="post__header">
           <g-image
             alt="Cover image"
+            class="post__image w-full object-cover mb-4"
             v-if="$page.post.cover_image"
             :src="$page.post.cover_image"
           />
         </div>
 
-        <div class="post__content" v-html="$page.post.content" />
-
-        <div class="post__footer">
-          <PostTags :post="$page.post" />
-        </div>
+        <PostTags class="mb-4" :post="$page.post" />
+        <div class="post__content text-2xl" v-html="$page.post.content" />
       </div>
-
-      <div class="post-comments">
-        <!-- Add comment widgets here -->
-      </div>
-
-      <Author class="post-author" />
     </div>
   </Layout>
 </template>
@@ -38,12 +29,14 @@
 import PostMeta from '~/components/PostMeta'
 import PostTags from '~/components/PostTags'
 import Author from '~/components/Author.vue'
+import Heading from '~/components/Heading.vue'
 
 export default {
   components: {
     Author,
     PostMeta,
-    PostTags
+    PostTags,
+    Heading
   },
   metaInfo() {
     return {
@@ -79,57 +72,17 @@ query Post ($id: ID!) {
 </page-query>
 
 <style lang="scss">
-.post-title {
-  padding: calc(var(--space) / 2) 0 calc(var(--space) / 2);
-  text-align: center;
-}
-
 .post {
-  &__header {
-    width: calc(100% + var(--space) * 2);
-    margin-left: calc(var(--space) * -1);
-    margin-top: calc(var(--space) * -1);
-    margin-bottom: calc(var(--space) / 2);
-    overflow: hidden;
-    border-radius: var(--radius) var(--radius) 0 0;
-
-    img {
-      width: 100%;
-    }
-
-    &:empty {
-      display: none;
+  &__image {
+    border: 10px solid;
+    border-image: url('../assets/images/ui-outline-purple.png') 10;
+    background-color: #9a51d9;
+    max-height: 300px;
+  }
+  &__content{
+    p {
+      @apply mb-8;
     }
   }
-
-  &__content {
-    h2:first-child {
-      margin-top: 0;
-    }
-
-    p:first-of-type {
-      font-size: 1.2em;
-      color: var(--title-color);
-    }
-
-    img {
-      width: calc(100% + var(--space) * 2);
-      margin-left: calc(var(--space) * -1);
-      display: block;
-      max-width: none;
-    }
-  }
-}
-
-.post-comments {
-  padding: calc(var(--space) / 2);
-
-  &:empty {
-    display: none;
-  }
-}
-
-.post-author {
-  margin-top: calc(var(--space) / 2);
 }
 </style>

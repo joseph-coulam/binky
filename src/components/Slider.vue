@@ -1,5 +1,5 @@
 <template>
-  <div class="slider w-100 my-14 rounded-xl">
+  <div class="aliased slider w-100 my-14 rounded-xl">
     <vue-glide type="slider" :perView="1" :gap="0">
       <vue-glide-slide v-for="(image, index) in images" :key="index">
         <img class="slider__image w-full object-cover" :src="image.url" />
