@@ -30,7 +30,7 @@
           as a God?
         </p>
 
-        <div class="max-w-md mx-auto grid grid-cols-2 gap-4">
+        <div class="max-w-md mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2">
           <Button button-text="Support Us" button-type="primary" />
           <Button button-text="Updates" button-type="secondary" />
         </div>
