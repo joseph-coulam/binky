@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="['gameplay-section', 'gameplay-section--' + direction]"
+    :class="['aliased gameplay-section', 'gameplay-section--' + direction]"
     data-aos="fade-up"
   >
     <div class="gameplay-section__text lg:mb-0 mb-14 text-white">
@@ -37,12 +37,6 @@ export default {
   @screen sm {
     @apply grid gap-10 my-20 text-left items-center;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 'gridImage gridText';
-  }
-
-  @screen lg {
-    @apply grid gap-20 my-20 text-left items-center;
-    grid-template-columns: 2fr 3fr;
     grid-template-areas: 'gridImage gridText';
   }
 

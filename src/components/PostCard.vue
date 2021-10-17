@@ -1,5 +1,5 @@
 <template>
-  <div class="post-card relative">
+  <div class="aliased post-card relative">
     <div class="post-card__content flex flex-col h-full justify-between flex-grow bg-white text-black">
 
       <!-- Link -->
