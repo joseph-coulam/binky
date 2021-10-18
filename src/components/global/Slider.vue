@@ -57,7 +57,7 @@ export default {
 <style lang="scss">
 .slider {
   border: 10px solid;
-  border-image: url('../assets/images/ui-outline-purple.png') 10;
+  border-image: url('../../assets/images/ui-outline-purple.png') 10;
   background-color: #9a51d9;
 
   &__image {

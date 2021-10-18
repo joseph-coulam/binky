@@ -17,7 +17,7 @@ export default {
         &__tag {
 			@apply rounded-xl text-gray-300 px-2;
             border: 6px solid;
-            border-image: url('../assets/images/ui-outline.png') 6;
+            border-image: url('../../assets/images/ui-outline.png') 6;
             background-color: #010101;
 
 			&:not(:last-child) {

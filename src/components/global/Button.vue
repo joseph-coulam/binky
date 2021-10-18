@@ -28,7 +28,7 @@ export default {
       @apply absolute top-0 opacity-30;
       content: "";
       left: -86px;
-      background-image: url('../assets/images/button-shine.png');
+      background-image: url('../../assets/images/button-shine.png');
       width: 86px;
       height: 86px;
     }
@@ -71,7 +71,7 @@ export default {
     @apply relative text-black;
     &:before{
       border: 10px solid;
-      border-image: url('../assets/images/ui-button-primary.png') 10;
+      border-image: url('../../assets/images/ui-button-primary.png') 10;
       background-color: #f9c054;
     }
   }
@@ -79,7 +79,7 @@ export default {
   &__secondary {
     &:before{
       border: 10px solid;
-      border-image: url('../assets/images/ui-button-secondary.png') 10;
+      border-image: url('../../assets/images/ui-button-secondary.png') 10;
       background-color: #102133;
     }
   }
@@ -88,7 +88,7 @@ export default {
     @apply text-black;
     &:before{
       border: 10px solid;
-      border-image: url('../assets/images/ui-button-ks.png') 10;
+      border-image: url('../../assets/images/ui-button-ks.png') 10;
       background-color: #05ce78;
     }
   }

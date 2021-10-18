@@ -12,6 +12,6 @@
 <style>
 footer {
   border-top: 6px solid;
-  border-image: url('../assets/images/ui-navbar.png') 6;
+  border-image: url('../../assets/images/ui-navbar.png') 6;
 }
 </style>

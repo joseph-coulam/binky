@@ -7,7 +7,7 @@
     </div>
     <div class="min-h-screen flex justify-center items-center">
       <div
-        class="relative w-100 max-w-2xl mt-20 px-6 mx-auto center grid gap-8 z-10"
+        class="relative w-100 max-w-2xl my-32 px-6 mx-auto center grid gap-8 z-10"
         data-aos="fade-in"
       >
         <h1>
@@ -58,7 +58,7 @@ query {
 </static-query>
 
 <script>
-import Button from '~/components/Button'
+import Button from '~/components/global/Button'
 import MagicBackdrop from '~/components/pixel-perfect/MagicBackdrop'
 
 export default {

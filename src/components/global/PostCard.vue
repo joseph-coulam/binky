@@ -10,10 +10,9 @@
       </div>
 
       <div class="p-4 pb-0">
-        <PostTags class="post-card__tags mb-4" :post="post" />
-        <h2 class="post-card__title text-lg font-bold" v-html="post.title" />
-        <p class="post-card__description text-gray-500 text-base overflow-hidden" v-html="post.description" />
-        
+        <!-- <PostTags class="post-card__tags mb-4" :post="post" /> -->
+        <h2 class="post-card__title text-xl font-bold mb-2" v-html="post.title" />
+        <p class="post-card__description text-gray-500 text-xl overflow-hidden" v-html="post.description" />
       </div>
 
       <div class="p-4">
@@ -26,8 +25,8 @@
 </template>
 
 <script>
-import PostMeta from '~/components/PostMeta'
-import PostTags from '~/components/PostTags'
+import PostMeta from '~/components/global/PostMeta'
+import PostTags from '~/components/global/PostTags'
 
 export default {
   components: {
@@ -45,17 +44,21 @@ export default {
 
   @apply text-xl rounded-xl text-white;
   border: 6px solid;
-  border-image: url('../assets/images/ui-outline.png') 6;
+  border-image: url('../../assets/images/ui-outline.png') 6;
   background-color: white;
 
   &__header {
     @apply overflow-hidden;
     border-bottom: 6px solid;
-    border-image: url('../assets/images/ui-outline.png') 6;
+    border-image: url('../../assets/images/ui-outline.png') 6;
 
     &:empty {
       @apply hidden;
     }
+  }
+
+  &__image{
+    @apply w-full h-64 object-cover;
   }
 
   &__description{
@@ -74,8 +77,6 @@ export default {
     overflow: hidden;
     text-indent: -9999px;
     z-index: 0;
-  }
-  &__content{
   }
 }
 </style>

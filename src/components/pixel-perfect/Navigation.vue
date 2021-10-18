@@ -1,5 +1,5 @@
 <template>
-  <nav :class="['aliased navigation lg:block mx-auto center flex flex-col', {'navigation--active': !this.$store.state.activeMenu}]">
+  <nav :class="[`aliased navigation lg:block mx-auto center flex flex-col ${this.$store.state.activeMenu ? 'navigation--active' : 'navigation--inactive'}`]">
 
     <div @click="toggleMenu" class="absolute top-2 right-2 opacity-80 hover:opacity-100 lg:hidden">
       <img class
@@ -34,9 +34,9 @@ export default {
   data() {
     return {
       navigation: [
-        { name: 'About', href: '#about' },
-        { name: 'Gameplay', href: '#gameplay' },
-        { name: 'Updates', href: '#updates' },
+        { name: 'About', href: '/pixel-perfect/#about' },
+        { name: 'Gameplay', href: '/pixel-perfect/#gameplay' },
+        { name: 'Updates', href: '/pixel-perfect/#updates' },
         { name: 'Support', href: '#' }
       ]
     }
@@ -52,14 +52,18 @@ export default {
 <style lang="scss">
 .navigation {
   border: 10px solid;
-  border-image: url('../assets/images/ui-navbar.png') 10;
-  background-color: rgba(15, 23, 36, 0.95);
+  border-image: url('../../assets/images/ui-navbar.png') 10;
+  background-color: rgba(22, 16, 34, 0.96);
+
+  @apply relative top-0 w-full h-full z-50 lg:block;
 
   &--active{
-    @apply hidden lg:block
+    @apply fixed;
   }
 
-  @apply fixed left-0 top-0 w-full h-full z-50;
+  &--inactive{
+    @apply hidden lg:block;
+  }
 
   @screen lg {
     @apply relative rounded-xl text-white py-4 px-8;
