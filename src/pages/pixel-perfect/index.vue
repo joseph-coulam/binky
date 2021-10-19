@@ -155,14 +155,14 @@ export default {
     content: '';
     height: 38px;
     bottom: -10px;
-    background-image: url('../assets/images/divider-wood.png');
+    background-image: url('../../assets/images/divider-wood.png');
   }
 
   &:before{
     @apply absolute top-0 left-0 w-full;
     height: 38px;
     content: "";
-    background-image: url('../assets/images/background-rocks.png');
+    background-image: url('../../assets/images/background-rocks.png');
   }
 }
 
@@ -178,7 +178,7 @@ export default {
   &:after{
     @apply absolute top-0 left-0 opacity-10 w-full h-full pointer-events-none;
     content: "";
-    background-image: url('../assets/images/background-bricks.png');
+    background-image: url('../../assets/images/background-bricks.png');
   }
 
 }
